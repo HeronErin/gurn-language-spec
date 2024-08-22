@@ -64,7 +64,7 @@ Number prefixes:
 
 Number suffixes:
 
-In addition to prefixes, numbers can also be given a suffix denoting the type it will occupy.  See [DataTypes/Integer values](./DataTypes.md#Integer values)
+In addition to prefixes, numbers can also be given a suffix denoting the type it will occupy.  See [DataTypes/Integer values](DataTypes.md#Integer values)
 Ex:
 ```java
 var x = 0xFEED_BEEF_u128
