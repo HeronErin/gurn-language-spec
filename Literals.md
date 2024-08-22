@@ -61,9 +61,10 @@ Number prefixes:
 | Octal       | ```0o``` | ```0o1234567```    |
 | Decimal     | ```0d``` | ```0d69```         |
 | Hexadecimal | ```0x``` | ``` 0xFEEDBEEF ``` |
+
 Number suffixes:
 
-In addition to prefixes, numbers can also be given a suffix denoting the type it will occupy.  See [[DataTypes#Integer values|DataType/Integer values]]
+In addition to prefixes, numbers can also be given a suffix denoting the type it will occupy.  See [DataTypes#Integer values (DataTypes#Integer values)]
 Ex:
 ```java
 var x = 0xFEED_BEEF_u128
