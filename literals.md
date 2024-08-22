@@ -6,9 +6,13 @@
 
 ### Quote types and their meaning
 
--------------------------------------
-| ``` ` ``` | Backticks | asdasd    |
--------------------------------------
+
+
+| Type         | Ex        | Description                | Usage                 |
+| ------------ | --------- | -------------------------- | --------------------- |
+| Backtick     | ``` ` ``` | Used for string templating | ``` `Result: $()` ``` |
+| Single Quote | ``` ' ``` | Single character           | ``` '😀'```           |
+| Double Quote | ``` " ``` | Full string                | ```"Hello world!"```  |
 
 
 ### Raw String Literals
