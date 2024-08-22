@@ -20,6 +20,6 @@ The datatype name for a boolean is `bool`, and like most sensible languages the 
 ### Arrays:
 Unlike Rust, I see no need to be a functional language, and as such, the default array type will be allowed to grow dynamically (assuming it is not declared as a constant). 
 ### Strings:
-Unlike what certain languages not to be named call them (*caught* Java), strings are not primitives! Due to the nature of mankind, we do not all speak English, and as such ASCII should not be all that is supported. Because of this, a datatype it needed to handle this, and that is where strings come in. Internally, strings are stored as UTF-8 byte array, however since UTF-8 is not the most convenient thing for the average programmer to use, the String type abstracts it away. For string syntax see [Literals/Strings](Literals.md#Strings)
+Unlike what certain languages not to be named call them (*caught* Java), strings are not primitives! Due to the nature of mankind, we do not all speak English, and as such ASCII should not be all that is supported. Because of this, a datatype it needed to handle this, and that is where strings come in. Internally, strings are stored as UTF-8 byte array, however since UTF-8 is not the most convenient thing for the average programmer to use, the String type abstracts it away. For string syntax see <a href ="Literals.md#Strings">Literals/Strings</a>
 ### Char:
 Up to four bytes of a UTF-8 character. Stored internally as an `[u8; <=4]` along with being freely cast to one
