@@ -10,8 +10,9 @@ Result<i32, Error> foo(i32 o){
 
 Result<()> main(){
 	i32 bar = 1234i32 + foo(0)?; // Bubble up error
-	if (bar == 1234)
-		println!("{}" ,bar);
+	var baz = bar; // implict copy, implicit type
+	if (baz == 1234)
+		println!("{}" ,baz);
 	else
 		todo!();
 	Ok(()) // Or implict return by returning unit type
