@@ -8,7 +8,7 @@ Result<i32, Error> foo(i32 o){
 }
 
 
-Result<()> main(){
+Result<(), Error> main(){
 	i32 bar = 1234i32 + foo(0)?; // Bubble up error
 	var baz = bar; // implict copy, implicit type
 	if (baz == 1234)

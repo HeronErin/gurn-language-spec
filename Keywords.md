@@ -1,0 +1,14 @@
+## Function specific
+
+| Keyword    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **pure**   | Guarantees and enforces that this function is pure (see [Wikipedia/Pure_Function](https://en.wikipedia.org/wiki/Pure_function)) certain thinks in the language will require a function be pure. (Ex: Macros)                                                                                                                                                                                                                                                               |
+| **inline** | Force a function to be always inlined                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| **static** | Inside a function scope, static variables are maintained between function calls. This means that if you have a function *foo*, with a static variable *count*, which is returned and incremented with each call, the function will keep track of how many times it is called.<br><br>**NOTE: ** STATIC VARIABLES ARE NOT MAINTAINED ACROSS THREADS. (unless they are defined as atomic)<br>**NOTE: ** Static variables *are* maintained across all instances of generics.  |
+|            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+
+## User defined object
+
+|     |     |
+| --- | --- |
+|     |     |

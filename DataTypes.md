@@ -1,4 +1,19 @@
 
+## User defined datatypes
+
+### Structs
+The most base form of all datatypes supported in the language. The structure is as follows:
+```
+{keywords} struct NAME[<[GENERICS]>] [where GENERIC CONDITIONS] : Parent, OtherParent {
+	...
+}
+```
+
+
+
+
+
+## Built-ins
 ### Integer values:
 
 | Length  | Signed | Unsigned |
