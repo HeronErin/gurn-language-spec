@@ -23,3 +23,16 @@ import std.traits.PrimativeInt;
 ```
 
 
+## Where clauses
+Where clauses can be though of as a single line of compile time code that returns a boolean value. (See <a href = "./Compile Time Execution.md">Compile Time Execution</a>) this makes where clauses much more powerful than other languages.
+```java
+// A function that can **only** work during compile time, that takes a type as a parameter. 
+comptime bool _isValid(comptime Type type){
+	type.toString().startsWith("i") // Only accept types that start with i
+}
+
+T max<T>(T a, T b) where _isValid(T)
+ => a if a > b else b;
+
+
+```

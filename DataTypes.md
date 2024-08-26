@@ -4,12 +4,54 @@
 ### Structs
 The most base form of all datatypes supported in the language. The structure is as follows:
 ```
-{keywords} struct NAME[<[GENERICS]>] [where GENERIC CONDITIONS] : Parent, OtherParent {
+{keywords} struct NAME[<[GENERICS]>] [where GENERIC CONDITIONS] {
 	...
 }
 ```
+The following is an example of a struct:
+```java
+pub struct Foo<T, F> where T instanceof std.traits.Comparable{
+	T a,
+	T b
+}
+```
 
+### Enums
+Enums are one of the most useful things of this language, and is most similar to that of Rust. Enums can act as they do in other languages, however are typically used in a way that allows them to carry other data depending on their Enum variety. An Enums structure is defined bellow:
+```
+{keywords} [genericType] enum NAME[<[GENERICS]>] [where GENERIC CONDITIONS]
+```
 
+The following is an example of a basic Enum that makes use of a custom generic type:
+```java
+// In this case the size of a Foo is the same as an i8
+pub i8 enum Foo{
+	bar = 0,
+	baz
+}
+```
+This example makes use of the Enum's ability to store extra data:
+```java
+// In this case the size of a Foo is that of a u16 + u128 (as a u128 is the largest variety, and a u16 is the generic type size)
+pub u16 enum Foo {
+	bar(u8, u8, u8) = 0, // 0 here is an optional *tag* that identifes a Foo as a bar. 
+	bar(u128)
+}
+```
+
+You can obtain the tag of a variety using the `._tag` property all Enum varieties contain. In addition, and enum variety can be constructed using the tag with a simple cast. The following code is an example of how to do so:
+```java
+pub u8 enum Foo {
+	bar = 0,
+	baz(u8) = 1
+}
+pub void main(){
+	Foo x = (0) |> Foo; // x == Foo.bar
+	Foo y = (1, 16) |> Foo; // x == Foo.baz(16)
+	
+	Foo z = (16, 0) |> Foo; // Throws a runtime error 
+}
+```
 
 
 
