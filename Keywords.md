@@ -22,4 +22,4 @@
 | --------- | ----------------------------------------------------------------------------------------------------------------------- |
 | **where** | See: <a href="./Generics And Templating.md">Generics And Templating</a>                                                 |
 | **const** | Specifies that an variable in unchanging. This will prevent you from updating the variable later with a compiler error. |
-|           |                                                                                                                         |
+| **defer** | Run code that follows at end of the current scope.<br>Ex: `defer file.close()`                                          |

@@ -107,6 +107,16 @@ When dereferencing an object inside an expression it will either copy the value 
 	var z = *xRef + 1;
 	// z = 6
 	// x = 5
-	struct
-```
+	
+	
+	// Assuming SomeStruct is the default ref type:
+	var someStruct = SomeStruct{x: 1, y: 2};
+	var someStructRef = &someStruct;
+
+	var notACopy = *someStructRef;
+	notACopy.x++;
+	// someStruct = {x: 2, y: 2}
+	// someStructRef = &{x: 2, y: 2}
+	// notACopy = {x: 2, y: 2}
+``` 
 
