@@ -6,7 +6,7 @@ Quote character types:
 | Type                | Ex            | Desc                       | Usage                                              |
 | ------------------- | ------------- | -------------------------- | -------------------------------------------------- |
 | Backtick            | ``` ` ```     | Templated String           | ``` `Result: $()` ```                              |
-| Single Quote        | ``` ' ```     | Single character           | ``` '😀'```                                        |
+| Single Quote        | ``` ' ```     | Single character           | ``` '😀'``` can be unicode                         |
 | Double Quote        | ``` " ```     | Typical string             | ```"Hello world!"```                               |
 | Triple Double Quote | ``` """ ```   | Multiline String           | ```"""Hello world! /* multiple lines */ """```     |
 | Triple BackTick     | ``` `​`​` ``` | Multiline Templated String | ``` `​`​`Result: $() /* multiple lines */`​`​` ``` |

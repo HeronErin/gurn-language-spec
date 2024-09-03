@@ -14,7 +14,6 @@
 | ----------- | ------------------------------------------------------------------------ |
 | **pub**     | Makes an object, be it function, struct, or enum, public for all to see. |
 | **private** | This keyword is unnecessary, all things are private by **default**.      |
-|             |                                                                          |
 
 ## General Keywords
 

@@ -1,4 +1,8 @@
-There are 3 types of functions in the language, compile-time only, run-time only, and functions that can be run at both. 
+
+## Rules around the `!` functions
+
+* The return type is compile time
+* Or the `@template` decorator is used
 
 ## Compile time parameters
 ```java
@@ -72,7 +76,7 @@ comptime [Token] onePlus(T num) where T implements PrimativeInt
 // Using strings
 @template(ret)
 comptime String onePlus(T num) where T implements PrimativeInt
-		=> format!("{}", num + 1);
+		=> `${num + 1}`;
 
 
 const var number = onePlus(1); // number = 2
@@ -91,3 +95,62 @@ const Json some_parsed_json = parseJson!({
 	"baz": [1, 2, 3, 4]
 }); // parseJson is done at compile time
 ```
+
+
+## Macro argument types
+Part of the magic of Gurn macros is the fact the arguments do not need to be set in stone.
+
+The most basic usage is just accepting the CompileType enum as an argument:
+```java
+@template(args)
+comptime void xprint(CompileType value){...}
+
+xprint!("any type"); // Valid
+xprint!(1); // Valid
+```
+Or more advanced make it a <a href="./Functions.md#Variadic Functions">Variadic Functions</a> allowing for an unlimited amount of any argument:
+```java
+@template(args)
+comptime void xprint(...CompileType values){...}
+
+xprint!("1", 2, Some(3)); // Valid
+xprint!({}); // Valid
+xprint!(u8); // Valid
+xprint!(if); // Valid
+
+```
+In addition it can be combined with the where keyword, the matches macro, and some array functions:
+```java
+import std.arrays;
+
+
+// Values are known at compile time, as such the where clause can be used to limit what are valid macro arguments
+@template(args)
+comptime void xprint(...CompileType values) 
+	where values.all(|val| val.matches!(CompileType::ConstVal)){
+	...
+}
+
+xprint!("1", 2, Some(3)); // Valid
+xprint!({}); // Not Valid
+xprint!(u8); // Not Valid
+xprint!(if); // Not Valid
+```
+
+The following is a simplified definition of the CompileType enum.
+```rust
+// See documentation for more details (coming soon)
+enum CompileType{
+	Type(Type),
+	ConstVal(CompileTimeValue),
+	CodeBlock(CodeBlock),
+	Keyword(String)
+}
+struct CompileTimeValue{
+	Type type;
+	&void value; // Typeless refrence.  
+}
+```
+
+
+
