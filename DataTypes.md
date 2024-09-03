@@ -104,6 +104,9 @@ When dereferencing an object inside an expression it will either copy the value 
 	u32 x = 5;
 	&u32 xRef = &x;
 
-	var 
-
+	var z = *xRef + 1;
+	// z = 6
+	// x = 5
+	struct
 ```
+

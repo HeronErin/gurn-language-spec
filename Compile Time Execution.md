@@ -85,7 +85,7 @@ comptime Json parseJson(String input){
 	parseJsonString(input).unwrap()
 }
 
-// Usage
+// Usage:
 const Json some_parsed_json = parseJson!({
 	"foo": "bar",
 	"baz": [1, 2, 3, 4]
