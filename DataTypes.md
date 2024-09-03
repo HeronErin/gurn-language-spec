@@ -10,7 +10,7 @@ The most base form of all datatypes supported in the language. The structure is 
 ```
 The following is an example of a struct:
 ```java
-pub struct Foo<T, F> where T instanceof std.traits.Comparable{
+pub struct Foo<T, F> where T implements std.traits.Comparable{
 	T a,
 	T b
 }
@@ -80,3 +80,30 @@ Unlike Rust, I see no need to be a functional language, and as such, the default
 Unlike what certain languages not to be named call them (*caught* Java), strings are not primitives! Due to the nature of mankind, we do not all speak English, and as such ASCII should not be all that is supported. Because of this, a datatype it needed to handle this, and that is where strings come in. Internally, strings are stored as UTF-8 byte array, however since UTF-8 is not the most convenient thing for the average programmer to use, the String type abstracts it away. For string syntax see <a href ="Literals.md#Strings">Literals/Strings</a>
 ### Char:
 Up to four bytes of a UTF-8 character. Stored internally as an `[u8; <=4]` along with being freely cast to one
+
+### Pointers
+
+Pointers are supported in the language, however their use should be avoided. This is due to the fact that they **are not garbage collected!** This means that you must manually drop a pointer to avoid a memory leak.  A pointer can be either obtains by calling the raw `malloc()` function, or as a return value of a function. The `*` operator can be used to dereference a pointer. Pointers **not** guaranteed to be thread safe. Most of what is true with references are also true with pointers, beside not being garbage collected.
+
+### References
+
+The reference to an object can be obtained by using the `&` unary operator. When modifying a reference it will modify the original. References are **not** guaranteed to be thread safe, and as such shared references between threads should be done with an atomic object. 
+
+When dereferencing an object within an assignment it will denote assigning the value it points to:
+```c
+	u32 x = 5;
+	&u32 xRef = &x;
+
+	*xRef = 1;
+	
+	println!(x); // > 1
+```
+
+When dereferencing an object inside an expression it will either copy the value it points to, or the reference to it, depending on the object type. If it is a primitive type, or if a struct has the `valtype` attribute, it will copy the value. However most by default structs are themselves reference types. 
+```java
+	u32 x = 5;
+	&u32 xRef = &x;
+
+	var 
+
+```

@@ -2,10 +2,10 @@ Generics allow for one function definition to apply to many different type of va
 ```java
 import std.traits.Comparable;
 
-T max<T>(T a, T b) where T instanceof Comparable
+T max<T>(T a, T b) where T implements Comparable
 	=> a if a > b else b; 
 	
-T min<T>(T a, T b) where T instanceof Comparable
+T min<T>(T a, T b) where T implements Comparable
 	=> a if a < b else b; 
 
 ```
@@ -15,10 +15,10 @@ import std.traits.PrimativeInt;
 
 // Making use of an inline enum to be able to return either type.
 (T, F) max<T, F>(T a, F, b) 
-	where T instanceof PrimativeInt && F instanceof PrimativeInt
+	where T implements PrimativeInt && F implements PrimativeInt
 	=> a if a > b else b; 
 (T, F) min<T, F>(T a, F, b) 
-	where T instanceof PrimativeInt && F instanceof PrimativeInt
+	where T implements PrimativeInt && F implements PrimativeInt
 	=> a if a < b else b; 
 ```
 
