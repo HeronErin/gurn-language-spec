@@ -2,11 +2,11 @@
 
 | Operator | Name     | Desc                                             |
 | -------- | -------- | ------------------------------------------------ |
-| **+**    | Add      | Binary - Add two numbers                         |
-| **-**    | Subtract | Binary - Subtract two numbers                    |
-| **/**    | Divide   | Binary - Divide two numbers                      |
-| ** \* ** | Multiply | Binary - Multiply two numbers together           |
-| **%**    | Modulus  | Binary - The remainder after an integer devision |
+| +        | Add      | Binary - Add two numbers                         |
+| -        | Subtract | Binary - Subtract two numbers                    |
+| /        | Divide   | Binary - Divide two numbers                      |
+| \*       | Multiply | Binary - Multiply two numbers together           |
+| \%       | Modulus  | Binary - The remainder after an integer devision |
 
 ## Bitwise
 
@@ -16,7 +16,11 @@
 | **^**    | Xor  | Binary - Bitwise XOR two integers            |
 | **\|**   | Or   | Binary - Bitwise OR two integers             |
 | **!**    | Not  | Unary - Gets the Bitwise not for an integers |
-
+## Logical
+| Operator | Name        | Desc                                                                                                                                                                                 |
+| -------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| &&       | Logical And | Binary - Logical AND two values.  <br><br>Works like bitwise AND, however will not execute right branch if left branch is false. The preferred AND method for working with booleans. |
+| \|\|     | Logical or  | Binary - Logical OR two values.  <br><br>Works like bitwise or, however will not execute right branch if left branch is true. The preferred OR method for working with booleans.     |
 ## Types
 
 | Operator | Name        | Desc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
