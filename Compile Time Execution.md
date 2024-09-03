@@ -100,10 +100,10 @@ const Json some_parsed_json = parseJson!({
 ## Macro argument types
 Part of the magic of Gurn macros is the fact the arguments do not need to be set in stone.
 
-The most basic usage is just accepting the CompileType enum as an argument:
+The most basic usage is just accepting the CompilerValue enum as an argument:
 ```java
 @template(args)
-comptime void xprint(CompileType value){...}
+comptime void xprint(CompilerValue value){...}
 
 xprint!("any type"); // Valid
 xprint!(1); // Valid
@@ -111,7 +111,7 @@ xprint!(1); // Valid
 Or more advanced make it a <a href="./Functions.md#Variadic Functions">Variadic Functions</a> allowing for an unlimited amount of any argument:
 ```java
 @template(args)
-comptime void xprint(...CompileType values){...}
+comptime void xprint(...CompilerValue values){...}
 
 xprint!("1", 2, Some(3)); // Valid
 xprint!({}); // Valid
@@ -126,8 +126,8 @@ import std.arrays;
 
 // Values are known at compile time, as such the where clause can be used to limit what are valid macro arguments
 @template(args)
-comptime void xprint(...CompileType values) 
-	where values.all(|val| val.matches!(CompileType::ConstVal)){
+comptime void xprint(...CompilerValue values) 
+	where values.all(|val| val.matches!(CompilerValue::ConstVal)){
 	...
 }
 
@@ -137,10 +137,10 @@ xprint!(u8); // Not Valid
 xprint!(if); // Not Valid
 ```
 
-The following is a simplified definition of the CompileType enum.
+The following is a simplified definition of the CompilerValue enum.
 ```rust
 // See documentation for more details (coming soon)
-enum CompileType{
+enum CompilerValue{
 	Type(Type),
 	ConstVal(CompileTimeValue),
 	CodeBlock(CodeBlock),
