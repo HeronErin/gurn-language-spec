@@ -45,6 +45,7 @@ const int a = add!(1, 3); // a = 4 is the assembly emmited by the compiler
 
 ### Code in code out
 This form of macros is what most over compiled languages feature, a system of no more than simple templating, where the macros call is replaced with the returned code. Here the magic `template` decorator tells the compiler that both the args and the return value are provided by the compiler, not user code. 
+**The largest restriction is that you must have an even number of parenthesis inside the macro arguments,  otherwise it can't be properly parsed.**
 
 ```java
 // Using tokens
@@ -55,7 +56,7 @@ comptime [Token] numberOne([Token] args) => [Token::Number(1)];
 @template(ret, args)
 comptime String numberOne(String args) => "1";
 
-const var number = numerOne!();
+const var number = numberOne!();
 ```
 
 ### Constants in code out
@@ -69,6 +70,24 @@ comptime [Token] onePlus(T num) where T implements PrimativeInt
 		=> [Token::Number(num + 1)];
 
 // Using strings
+@template(ret)
 comptime String onePlus(T num) where T implements PrimativeInt
 		=> format!("{}", num + 1);
+
+
+const var number = onePlus(1); // number = 2
+```
+### Code in constants out
+Probably the most powerful of Gurn's macros system, the ability to take in arbitrary test data and return a Gurn object. 
+```java
+@template(args)
+comptime Json parseJson(String input){
+	parseJsonString(input).unwrap()
+}
+
+// Usage
+const Json some_parsed_json = parseJson!({
+	"foo": "bar",
+	"baz": [1, 2, 3, 4]
+}); // parseJson is done at compile time
 ```
