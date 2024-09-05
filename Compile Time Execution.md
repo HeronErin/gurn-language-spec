@@ -54,7 +54,7 @@ This form of macros is what most over compiled languages feature, a system of no
 ```java
 // Using tokens
 @template(ret, args)
-comptime [Token] numberOne([Token] args) => [Token::Number(1)];
+comptime [Token] numberOne([Token] args) => [Token.Number(1)];
 
 // Using strings
 @template(ret, args)
@@ -71,7 +71,7 @@ import std.traits.PrimativeInt;
 // Using tokens
 @template(ret)
 comptime [Token] onePlus(T num) where T implements PrimativeInt
-		=> [Token::Number(num + 1)];
+		=> [Token.Number(num + 1)];
 
 // Using strings
 @template(ret)
@@ -127,7 +127,7 @@ import std.arrays;
 // Values are known at compile time, as such the where clause can be used to limit what are valid macro arguments
 @template(args)
 comptime void xprint(...CompilerValue values) 
-	where values.all(|val| val.matches!(CompilerValue::ConstVal)){
+	where values.all((val) => val.matches!(CompilerValue.ConstVal)){
 	...
 }
 
