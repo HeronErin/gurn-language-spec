@@ -41,19 +41,29 @@ pub u16 enum Foo {
 
 You can obtain the tag of a variety using the `._tag` property all Enum varieties contain. In addition, and enum variety can be constructed using the tag with a simple cast. The following code is an example of how to do so:
 ```java
+// The tag is defined as a u8 size
 pub u8 enum Foo {
-	bar = 0,
-	baz(u8) = 1
+	bar = 0, 
+	baz(u8) = 1 // This enum will hold an additional byte. 
 }
 pub void main(){
-	Foo x = (0) |> Foo; // x == Foo.bar
-	Foo y = (1, 16) |> Foo; // x == Foo.baz(16)
+	Foo x = (0) |> Foo!.unwrap(); // x == Foo.bar
+	Foo y = (1, 16) |> Foo!.unwrap(); // x == Foo.baz(16)
 	
-	Foo z = (16, 0) |> Foo; // Throws a runtime error 
+	Foo! z = (16, 0) |> Foo!; // Returns an error 
 }
 ```
 
+## Defining functions for objects
+The `impl` keyword is used in Gurn to implement functions for object. The `impl` keyword can also be used with traits (See <a href ="Traits.md">Traits</a>) 
+```rust
+struct Int(u8);
+impl Int{
+	u8 get(self) => self.0;
+	u8 square(self) => self * self;
 
+}
+```
 
 ## Built-ins
 ### Integer values:
