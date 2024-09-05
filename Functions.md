@@ -6,7 +6,7 @@ i8 foo(){
 	return 0;
 }
 ```
-Or by omiting the semicolon
+Or by omitting the semicolon
 ```rust
 i8 foo(){
 	0

@@ -75,7 +75,7 @@ pub void main(){
 | 128-Bit | f128 | N/A                          |
 | Arch    | real | *float*                      |
 ### Booleans:
-The datatype name for a boolean is `bool`, and like most sensible languages the values for a boolean are `true` and `false`, 1 and 0. 
+The datatype name for a boolean is `bool`, and like most sensible languages the values for a boolean are `true` and `false`, -1 and 0. 
 ### Arrays:
 Unlike Rust, I see no need to be a functional language, and as such, the default array type will be allowed to grow dynamically (assuming it is not declared as a constant). 
 ### Strings:

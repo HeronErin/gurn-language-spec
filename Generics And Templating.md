@@ -1,4 +1,4 @@
-Generics allow for one function definition to apply to many different type of variables. The following is a basic example of how to use it.
+Generics allow for one function definition to apply to many different types of variables. The following is a basic example of how to use it.
 ```java
 import std.traits.Comparable;
 
