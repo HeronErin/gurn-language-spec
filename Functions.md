@@ -2,19 +2,19 @@
 
 Gurn allows for returning through the typical return keyword
 ```java
-int foo(){
+i8 foo(){
 	return 0;
 }
 ```
 Or by omiting the semicolon
 ```rust
-int foo(){
+i8 foo(){
 	0
 }
 ```
 Or with the shorthand declaration syntax
 ```rust
-int foo() => 0;
+i8 foo() => 0;
 ```
 
 ## Variadic Functions

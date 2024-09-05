@@ -12,6 +12,16 @@ enum Value{
 Value(1.0); // == Value.float(1.0)
 Value(1); // == Value.int(1.0)
 ```
+**However if the compiler can't resolve the correct type it errors:**
+```java
+enum Value{
+	float(f32),
+	int(i32)
+}
+Value("Hello"); // Errors
+
+
+```
 ## Enum Syntactical Sugar
 
 The two most important enums in Gurn are Option and Result. 
