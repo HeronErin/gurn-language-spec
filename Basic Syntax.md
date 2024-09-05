@@ -3,7 +3,7 @@
 The language is itself is similar to that of Rust, however it is variable declaration and function return types are closer to that of C.
 
 ```rust
-i32! foo(i32 o){
+i32? foo(i32 o){
 	return o; // You can return with the keyword
 }
 
