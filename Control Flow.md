@@ -3,32 +3,58 @@ Gurn's Control flow, for the most part, is just C with some modifications.
 ## If statements
 
 ```java
+// Multiline
 if (CONDITION){
 	...
 }
+
+
+// Singleline
+if (CONDIITON)
+	...
 ```
 ## Else
 
 ```java
+// Multiline
 if (CONDITION){
 	...
 }else{
 	...
 }
+
+// Singleline
+if (CONDITION)
+	...
+else
+	...
 ```
 ## Else if
 ```java
+// Multiline
 if (CONDITION){
 	...
 }else if (CONDITION){
 	...
 }
+
+
+// Singleline
+if (CONDITION)
+	...
+else if (CONDITION)
+	...
 ```
 ## While loop
 ```java
+// Multiline
 while(CONDITION){
 	...
 }
+
+// Singleline
+while(CONDITION)
+	...
 ```
 ## Do while
 ```java
@@ -38,9 +64,14 @@ do {
 ```
 ## For loop
 ```java
+// Multiline
 for (T NAME; ITERATOR){
 	...
 }
+
+// Singleline
+for (T NAME; ITERATOR)
+	...
 ```
 however the type can be inferred
 ```java
@@ -55,8 +86,8 @@ The simple case:
 ```rust
 i8 x = 0;
 match (x){
-	0 => {...},
-	1 => panic!("Shit"),
+	0 => {...}, // Multiline
+	1 => panic!("Shit"), // Singleline
 	_ => todo!() // Guard clause for all other i8 values
 }
 ```

@@ -12,11 +12,11 @@ String fastMemCpy(comptime usize size, u8* dst, u8* src){
 	const usize single_bytes = size / 8;
 	const usize bytes_afteru64 = u64_chuncks * 8;
 	
-	comptime for offset in 0..u64_chuncks{
+	comptime for(offset; 0..u64_chuncks)
 		dst |> *u64[offset] = src |> *u64[offset]
-	}
 	
-	comptime for offset in 0..single_bytes{
+	
+	comptime for(offset; 0..single_bytes)
 		dst[offset + bytes_afteru64] = src[offset + bytes_afteru64];
 	}
 }
