@@ -15,7 +15,7 @@
 | **&**    | And  | Binary - Bitwise AND two integers                                                                                                 |
 | **^**    | Xor  | Binary - Bitwise XOR two integers                                                                                                 |
 | **\|**   | Or   | Binary - Bitwise OR two integers                                                                                                  |
-| **!**    | Not  | Unary - Gets the Bitwise not for an integers<br><br>Note: **Must preceded the operand, otherwise treated as the Error Operator!** |
+| **~**    | Not  | Unary - Gets the Bitwise not for an integers<br><br>Note: **Must preceded the operand, otherwise treated as the Error Operator!** |
 ## Logical
 | Operator | Name        | Desc                                                                                                                                                                                 |
 | -------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
