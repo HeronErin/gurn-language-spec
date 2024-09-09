@@ -10,17 +10,26 @@
 
 ## Bitwise
 
-| Operator | Name | Desc                                                                                                                                                                 |
-| -------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **&**    | And  | Binary - Bitwise AND two integers                                                                                                                                    |
-| **^**    | Xor  | Binary - Bitwise XOR two integers                                                                                                                                    |
-| **\|**   | Or   | Binary - Bitwise OR two integers                                                                                                                                     |
-| **~**    | Not  | Unary - Gets the Bitwise not for an integers, and turns a `true` into a `false`<br><br>Note: **Must preceded the operand, otherwise treated as the Error Operator!** |
+| Operator | Name                 | Desc                                                                                                                                                                 |
+| -------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **&**    | And                  | Binary - Bitwise AND two integers                                                                                                                                    |
+| **^**    | Xor                  | Binary - Bitwise XOR two integers                                                                                                                                    |
+| **\|**   | Or                   | Binary - Bitwise OR two integers                                                                                                                                     |
+| **~**    | Not                  | Unary - Gets the Bitwise not for an integers, and turns a `true` into a `false`<br><br>Note: **Must preceded the operand, otherwise treated as the Error Operator!** |
+| <<       | left shift           | Binary - left shift (signed)                                                                                                                                         |
+| >>       | right shift          | Binary - right shift  (signed)                                                                                                                                       |
+| <<<      | left unsigned shift  | Binary - left shift (unsigned)                                                                                                                                       |
+| >>>      | right unsigned shift | Binary - right shift  (insigned)                                                                                                                                     |
 ## Logical
-| Operator | Name        | Desc                                                                                                                                                                                 |
-| -------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| &&       | Logical And | Binary - Logical AND two values.  <br><br>Works like bitwise AND, however will not execute right branch if left branch is false. The preferred AND method for working with booleans. |
-| \|\|     | Logical or  | Binary - Logical OR two values.  <br><br>Works like bitwise or, however will not execute right branch if left branch is true. The preferred OR method for working with booleans.     |
+| Operator | Name                       | Desc                                                                                                                                                                                 |
+| -------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| &&       | Logical And                | Binary - Logical AND two values.  <br><br>Works like bitwise AND, however will not execute right branch if left branch is false. The preferred AND method for working with booleans. |
+| \|\|     | Logical or                 | Binary - Logical OR two values.  <br><br>Works like bitwise or, however will not execute right branch if left branch is true. The preferred OR method for working with booleans.     |
+| >        | Greater than               | Binary - Test if greater than                                                                                                                                                        |
+| <        | Lesser than                | Binary - Test if lesser than                                                                                                                                                         |
+| <=       | Greater than  or equals to | Binary - Test if greater than or equals to                                                                                                                                           |
+| >=       | Lesser than or equals to   | Binary - Test if lesser than or equals to                                                                                                                                            |
+| ==       | Is Equal to                | Binary - Test equality                                                                                                                                                               |
 ## Types
 
 | Operator | Name              | Desc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
