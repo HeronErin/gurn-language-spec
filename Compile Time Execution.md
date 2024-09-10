@@ -1,8 +1,44 @@
 
 ## Rules around the `!` functions
-
-* The return type is compile time
+* The return type is compile time BUT it is not being used in a compile time variable
 * Or the `@template` decorator is used
+A good rule of thumb is that `!` functions generate code or constants.
+
+## Compile time functions without using `!`
+You should not use `!` when the function itself is used during regular control flow
+```java
+pure i32 add(i32 x, i32 y) => x + y;
+i32 impure_add(i32* x, i32* y) => *x + *y;
+
+
+// Calling a comptime function inside another comptime function
+
+import std.compiler.enviroment_info : halfWordSize;
+comptime Type get_half_word() => halfWordSize;
+
+
+comptime void something(){
+	
+	// Pure functions never need !
+	i32 x = add(1, 2);
+
+	// This compiles, however it is bad practice for many reasons
+	i32 y = impure_add(1._ptr, 2._ptr);
+
+	// We are inside another comptime function,
+	// so it is part of the normal function flow
+	Type t = get_half_word();
+	
+	// However it can still work as a macro,
+	// this runs before this compile time iteration 
+	get_half_word!() t = 1;
+
+
+}
+
+// We do not need ! since it returns void
+something();
+```
 
 ## Compile time parameters
 ```java
